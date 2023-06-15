@@ -2,14 +2,14 @@
 
 from common import format_tour, read_input
 
-import solver_my
+import solver_annealing_method
 
 CHALLENGES = 7
 
-def generate_sample_output():
+def generate_output():
     for i in range(CHALLENGES):
         cities = read_input(f'input_{i}.csv')
-        solver = solver_my
+        solver = solver_annealing_method
         name = 'output'
         tour = solver.solve(cities)
         with open(f'{name}_{i}.csv', 'w') as f:
@@ -17,4 +17,4 @@ def generate_sample_output():
 
 
 if __name__ == '__main__':
-    generate_sample_output()
+    generate_output()
